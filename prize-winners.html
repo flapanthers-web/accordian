@@ -1,97 +1,99 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Editable Accordion with Font and Color Settings</title>
+	<title>Editable Accordion with Font and Text Settings</title>
 	<style>
 		.accordion {
 			border: 1px solid #ccc;
 			border-radius: 4px;
-		}
-
-		.accordion-item {
-			border-bottom: 1px solid #ccc;
-		}
-
-		.accordion-header {
-			background-color: #eee;
-			color: #333;
-			cursor: pointer;
-			padding: 10px;
-			font-family: Arial, sans-serif;
-			font-size: 16px;
-		}
-
-		.accordion-header:hover {
-			background-color: #ddd;
-		}
-
-		.accordion-content {
-			padding: 10px;
-			display: none;
+			margin-top: 20px;
 			font-family: Arial, sans-serif;
 			font-size: 14px;
 			color: #333;
 		}
 
-		.accordion-item.active .accordion-header {
-			background-color: #3498db;
+		.accordion-item {
+			border-bottom: 1px solid #ccc;
+			position: relative;
+		}
+
+		.accordion-header {
+			background-color: #dc3545;
 			color: #fff;
+			cursor: pointer;
+			padding: 10px;
+			font-size: 16px;
+			font-weight: bold;
+			text-transform: uppercase;
+		}
+
+		.accordion-header:hover {
+			background-color: #c82333;
+		}
+
+		.accordion-content {
+			padding: 10px;
+			display: none;
+		}
+
+		.accordion-item.active .accordion-header {
+			background-color: #ffc107;
+			color: #333;
 		}
 
 		.accordion-item.active .accordion-content {
 			display: block;
 		}
 
-		.dropdown {
+		.department-name {
+			font-weight: bold;
 			margin-bottom: 10px;
 		}
 
-		.dropdown label {
-			display: inline-block;
-			width: 100px;
-			text-align: right;
-			margin-right: 10px;
+		.department-list {
+			margin-left: 20px;
+			margin-bottom: 20px;
 		}
 
-		.dropdown select {
-			width: 200px;
+		.department-list li {
+			list-style: none;
+			margin-bottom: 5px;
+		}
+
+		.employee-name {
+			font-weight: bold;
+		}
+
+		.employee-title {
+			font-style: italic;
+			margin-bottom: 5px;
+		}
+
+		.employee-email {
+			margin-bottom: 5px;
 		}
 	</style>
 </head>
 <body>
-	<h1>Editable Accordion with Font and Color Settings</h1>
+	<h1>Editable Accordion with Font and Text Settings</h1>
 	<div class="accordion">
 		<div class="accordion-item">
-			<div class="accordion-header" style="background-color: #f1c40f; color: #fff; font-size: 18px;">Accordion Section 1</div>
+			<div class="accordion-header">Hockey Operations</div>
 			<div class="accordion-content">
-				<div class="dropdown">
-					<label for="dropdown-1-1">Dropdown 1:</label>
-					<select id="dropdown-1-1">
-						<option value="">--Select--</option>
-						<option value="Option 1">Option 1</option>
-						<option value="Option 2">Option 2</option>
-						<option value="Option 3">Option 3</option>
-						<option value="Option 4">Option 4</option>
-						<option value="Option 5">Option 5</option>
-					</select>
-				</div>
-				<div class="dropdown">
-					<label for="dropdown-1-2">Dropdown 2:</label>
-					<select id="dropdown-1-2">
-						<option value="">--Select--</option>
-						<option value="Option 1">Option 1</option>
-						<option value="Option 2">Option 2</option>
-						<option value="Option 3">Option 3</option>
-						<option value="Option 4">Option 4</option>
-						<option value="Option 5">Option 5</option>
-					</select>
-				</div>
-				<div class="dropdown">
-					<label for="dropdown-1-3">Dropdown 3:</label>
-					<select id="dropdown-1-3">
-						<option value="">--Select--</option>
-						<option value="Option 1">Option 1</option>
-						<option value="Option 2">Option 2</option>
-						<option value="Option 3">Option 3</option>
-						<option value="Option 4">
-
+				<div class="department-name">Scouting</div>
+				<ul class="department-list">
+					<li><span class="employee-name">Roberto Luongo</span>, Director of Goaltending</li>
+					<li><span class="employee-name">Bryan McCabe</span>, Director of Player Personnel</li>
+					<li><span class="employee-name">Pierre Groulx</span>, Goaltending Coach</li>
+					<li><span class="employee-name">Paul Gallagher</span>, Amateur Scout</li>
+					<li><span class="employee-name">Toby O'Brien</span>, Pro Scout</li>
+				</ul>
+				<div class="department-name">Hockey Administration</div>
+				<ul class="department-list">
+					<li><span class="employee-name">Eric Joyce</span>, Vice President of Hockey Operations &amp; Assistant General Manager</li>
+					<li><span class="employee-name">Mike Dixon</span>, Director of Hockey Administration</li>
+					<li><span class="employee-name">Brian Melekian</span>, Manager of Hockey Analytics</li>
+					<li><span class="employee-name">Ian Anderson</span>, Hockey Operations Coordinator</li>
+				</ul>
+			</div>
+		</div>
