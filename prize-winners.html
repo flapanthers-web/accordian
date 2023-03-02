@@ -1,99 +1,89 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Editable Accordion with Font and Text Settings</title>
+	<title>Editable Accordion with Font and Text</title>
 	<style>
 		.accordion {
 			border: 1px solid #ccc;
 			border-radius: 4px;
-			margin-top: 20px;
-			font-family: Arial, sans-serif;
-			font-size: 14px;
-			color: #333;
+			margin-bottom: 20px;
 		}
 
 		.accordion-item {
 			border-bottom: 1px solid #ccc;
-			position: relative;
 		}
 
 		.accordion-header {
-			background-color: #dc3545;
+			background-color: #333;
 			color: #fff;
 			cursor: pointer;
-			padding: 10px;
+			padding: 15px;
+			font-family: Arial, sans-serif;
 			font-size: 16px;
 			font-weight: bold;
 			text-transform: uppercase;
+			letter-spacing: 1px;
 		}
 
 		.accordion-header:hover {
-			background-color: #c82333;
+			background-color: #555;
 		}
 
 		.accordion-content {
-			padding: 10px;
+			padding: 15px;
 			display: none;
+			font-family: Arial, sans-serif;
+			font-size: 14px;
+			color: #333;
+			line-height: 1.5;
 		}
 
 		.accordion-item.active .accordion-header {
-			background-color: #ffc107;
-			color: #333;
+			background-color: #c8102e;
 		}
 
 		.accordion-item.active .accordion-content {
 			display: block;
 		}
-
-		.department-name {
-			font-weight: bold;
-			margin-bottom: 10px;
-		}
-
-		.department-list {
-			margin-left: 20px;
-			margin-bottom: 20px;
-		}
-
-		.department-list li {
-			list-style: none;
-			margin-bottom: 5px;
-		}
-
-		.employee-name {
-			font-weight: bold;
-		}
-
-		.employee-title {
-			font-style: italic;
-			margin-bottom: 5px;
-		}
-
-		.employee-email {
-			margin-bottom: 5px;
-		}
 	</style>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(function() {
+			$('.accordion-header').click(function() {
+				if ($(this).parent().hasClass('active')) {
+					$(this).parent().removeClass('active');
+				} else {
+					$('.accordion-item').removeClass('active');
+					$(this).parent().addClass('active');
+				}
+			});
+		});
+	</script>
 </head>
 <body>
-	<h1>Editable Accordion with Font and Text Settings</h1>
+	<h1>Editable Accordion with Font and Text</h1>
 	<div class="accordion">
 		<div class="accordion-item">
-			<div class="accordion-header">Hockey Operations</div>
+			<div class="accordion-header" style="background-color: #c8102e;">Management</div>
 			<div class="accordion-content">
-				<div class="department-name">Scouting</div>
-				<ul class="department-list">
-					<li><span class="employee-name">Roberto Luongo</span>, Director of Goaltending</li>
-					<li><span class="employee-name">Bryan McCabe</span>, Director of Player Personnel</li>
-					<li><span class="employee-name">Pierre Groulx</span>, Goaltending Coach</li>
-					<li><span class="employee-name">Paul Gallagher</span>, Amateur Scout</li>
-					<li><span class="employee-name">Toby O'Brien</span>, Pro Scout</li>
+				<ul>
+					<li>President & CEO: John Doe</li>
+					<li>General Manager: Jane Smith</li>
+					<li>Assistant General Manager: Alex Lee</li>
+					<li>Director of Scouting: Mike Johnson</li>
+					<li>Director of Player Personnel: Sarah Lee</li>
 				</ul>
-				<div class="department-name">Hockey Administration</div>
-				<ul class="department-list">
-					<li><span class="employee-name">Eric Joyce</span>, Vice President of Hockey Operations &amp; Assistant General Manager</li>
-					<li><span class="employee-name">Mike Dixon</span>, Director of Hockey Administration</li>
-					<li><span class="employee-name">Brian Melekian</span>, Manager of Hockey Analytics</li>
-					<li><span class="employee-name">Ian Anderson</span>, Hockey Operations Coordinator</li>
+			</div>
+		</div>
+		<div class="accordion-item">
+			<div class="accordion-header" style="background-color: #002D62;">Hockey Operations</div>
+			<div class="accordion-content">
+				<ul>
+					<li>Head Coach: Jack Smith</li>
+					<li>Associate Coach: Jill Johnson</li>
+					<li>Assistant Coach: James Lee</li>
+					<li>Goaltending Coach: Ryan Jones</li>
+					<li>Video Coach: Mike Lee</li>
 				</ul>
 			</div>
 		</div>
